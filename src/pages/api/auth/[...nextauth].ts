@@ -11,9 +11,6 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET
     }),
   ],
-  jwt: {
-    signingKey: process.env.SIGNING_KEY,
-  },
   callbacks: {
     async signIn(user, account, profile) {
 
