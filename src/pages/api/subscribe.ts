@@ -21,7 +21,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         const user = await fauna.query<User>(
             q.Get(
                 q.Match(
-                    q.Index('user_by_email'),
+                    q.Index('users_by_email'),
                     q.Casefold(session.user.email)
                 )
             )
@@ -38,7 +38,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             await fauna.query(
                 q.Update(
                     q.Ref(
-                        q.Collections('users'), user.ref.id
+                        q.Collection('users'), user.ref.id
                     ),
                     {
                         data: {
