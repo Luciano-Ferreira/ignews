@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start",
     "debug": "NODE_OPTIONS='--inspect' next dev"
-
   },
   "dependencies": {
+    "@prismicio/client": "^5.1.0",
     "@stripe/stripe-js": "^1.15.0",
     "axios": "^0.21.1",
     "faunadb": "^4.3.0",
