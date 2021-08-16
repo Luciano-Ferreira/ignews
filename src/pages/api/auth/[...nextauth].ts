@@ -36,12 +36,12 @@ export default NextAuth({
             ])
           )
         )
-  
+
         return {
           ...session,
           activeSubscription: userActiveSubscription
         }
-      } catch (err){
+      } catch (err) {
         return {
           ...session,
           activeSubscription: `ActiveSubscription error: ${err}`
@@ -64,7 +64,7 @@ export default NextAuth({
             ),
             q.Create(
               q.Collection('users'),
-              { data: { email }}
+              { data: { email } }
             ),
             q.Get(
               q.Match(
