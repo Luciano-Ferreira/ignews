@@ -31,7 +31,7 @@ export default NextAuth({
               ),
               q.Match(
                 q.Index('subscription_by_status'),
-                'active'
+                "active"
               )
             ])
           )
@@ -41,17 +41,16 @@ export default NextAuth({
           ...session,
           activeSubscription: userActiveSubscription
         }
-      } catch (err) {
+      } catch (err){
         return {
           ...session,
-          activeSubscription: null,
-          
+          activeSubscription: err
         }
       }
     },
     async signIn(user, account, profile) {
+      const { email } = user;
 
-      const { email } = user
       try {
         await fauna.query(
           q.If(
@@ -59,29 +58,28 @@ export default NextAuth({
               q.Exists(
                 q.Match(
                   q.Index('user_by_email'),
-                  q.Casefold(user.email)
+                  q.Casefold(email)
                 )
               )
             ),
             q.Create(
               q.Collection('users'),
-              { data: { email } }
+              { data: { email }}
             ),
             q.Get(
               q.Match(
                 q.Index('user_by_email'),
-                q.Casefold(user.email)
+                q.Casefold(email)
               )
             )
           )
         )
-        return true;
 
-      } catch (err) {
-        console.error(err);
+        return true;
+      } catch {
         return false;
       }
+
     }
   }
-
 })
