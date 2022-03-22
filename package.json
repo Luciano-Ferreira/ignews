@@ -30,6 +30,7 @@
     "@types/node": "^15.0.3",
     "@types/react": "^17.0.5",
     "babel-jest": "^27.5.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "jest-dom": "^4.0.0",
     "next-auth": "^3.26.1",
