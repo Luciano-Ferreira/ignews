@@ -6,14 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "debug": "NODE_OPTIONS='--inspect' next dev"
+    "debug": "NODE_OPTIONS='--inspect' next dev",
+    "test": "jest"
   },
   "dependencies": {
     "@prismicio/client": "^5.1.0",
     "@stripe/stripe-js": "^1.15.0",
     "@types/prismic-dom": "^2.1.1",
     "axios": "^0.21.1",
-    "faunadb": "^4.3.0",
+    "faunadb": "^4.5.2",
     "next": "10.2.0",
     "prismic-dom": "^2.2.5",
     "react": "17.0.2",
@@ -23,8 +24,14 @@
     "stripe": "^8.148.0"
   },
   "devDependencies": {
+    "@testing-library/dom": "^8.11.3",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
     "@types/node": "^15.0.3",
     "@types/react": "^17.0.5",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
+    "jest-dom": "^4.0.0",
     "next-auth": "^3.26.1",
     "typescript": "^4.2.4"
   }
