@@ -21,12 +21,12 @@ jest.mock('next-auth/client', () => {
 
 describe('ActiveLink component', () => {
   it('should be able active link renders correctly', () => {
-    const { getByText } = render(
+    render(
       <Header />
     )
   
-    expect(getByText('Home')).toBeInTheDocument()
-    expect(getByText('Posts')).toBeInTheDocument()
+    expect(screen.getByText('Home')).toBeInTheDocument()
+    expect(screen.getByText('Posts')).toBeInTheDocument()
 
   });
 })
