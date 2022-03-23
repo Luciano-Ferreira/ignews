@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { RichText } from 'prismic-dom';
 import { useEffect } from 'react';
-import { useSession } from 'next-auth/client';
+import { useSession } from 'next-auth/react';
 import { getPrismicClient } from '../../../services/prismic';
 
 import styles from '../post.module.scss';
@@ -20,7 +20,7 @@ interface PostPreviewProps {
 }
 
 export default function PostPreview({ post }: PostPreviewProps) {
-  const [session] = useSession();
+  const { data: session } = useSession();
 
   useEffect(() => {
     if (session?.activeSubscription) {
@@ -68,7 +68,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const prismic = getPrismicClient();
 
-  const response = await prismic.getByUID('post', String(slug), {})
+  const response = await prismic.getByUID<any>('post', String(slug), {})
 
   const post = {
     slug,

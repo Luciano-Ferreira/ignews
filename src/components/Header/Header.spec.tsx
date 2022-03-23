@@ -19,7 +19,7 @@ jest.mock('next-auth/react', () => {
   }
 })
 
-describe('ActiveLink component', () => {
+describe('Header component', () => {
   it('should be able active link renders correctly', () => {
     render(
       <Header />
