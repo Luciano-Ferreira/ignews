@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
-import { SubscribeButton } from '.';
+import { SubscribeButton } from '../../components/SubscribeButton';
 
 jest.mock('next-auth/react');
 jest.mock('next/router');
