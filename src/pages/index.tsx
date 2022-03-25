@@ -5,14 +5,10 @@ import { stripe } from '../services/stripe';
 
 import styles from './home.module.scss';
 
-// Client-side
-// Server-side rendering
-// Static-site generation
-
 interface HomeProps {
   product: {
     priceId: string;
-    amount: number;
+    amount: string;
   }
 }
 
@@ -31,9 +27,7 @@ export default function Home({ product }: HomeProps) {
             Get access to all  the publications<br />
             <span>for {product.amount} months</span>
           </p>
-          <SubscribeButton 
-            priceId={product.priceId}
-          />
+          <SubscribeButton />
         </section>
         
         <img src="/images/avatar.svg" alt="Girl coding" />

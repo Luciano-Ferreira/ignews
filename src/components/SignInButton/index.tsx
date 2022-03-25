@@ -28,8 +28,8 @@ export default function SignInButton() {
     );
 
 
-    {/*if (session && status === 'authenticated') 
-    return (
+    {/*session && status === 'authenticated' && 
+    (
         <button 
             type="button"
             className={styles.signInButton}
@@ -41,8 +41,8 @@ export default function SignInButton() {
         </button>
     );
 
-    if (session === undefined && status=== 'loading')
-    return (
+    session === undefined && status=== 'loading' &&
+    (
         <button 
             type="button"
             className={styles.signInButton}
@@ -54,8 +54,8 @@ export default function SignInButton() {
         </button>
     );
 
-    if (session === null && status === 'unauthenticated')
-    return (
+    session === null && status === 'unauthenticated' &&
+    (
         <button 
             type="button"
             className={styles.signInButton}
