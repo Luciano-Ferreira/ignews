@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 
 export function SubscribeButton() {
     const { data: session } = useSession();
-    const router = useRouter()
+    const router = useRouter();
 
     async function handleSubscribe() {
         if (!session) {
@@ -21,6 +21,7 @@ export function SubscribeButton() {
 
         try {
             const response = await api.post('/subscribe')
+            console.log('Session ID log:' + response.data.sessionId)
 
             const { sessionId } = response.data;
 
