@@ -1,18 +1,31 @@
 import { query as q } from 'faunadb';
 import NextAuth from 'next-auth';
-import Providers from 'next-auth/providers';
+import GoogleProvider from 'next-auth/providers/google';
+import { useSession } from 'next-auth/react';
 
 import { fauna } from '../../../services/fauna';
 
 export default NextAuth({
   providers: [
-    Providers.Google({
+    GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code"
+        }
+      }
     }),
   ],
+  secret: process.env.SIGNIN_KEY,
+  jwt:{
+    
+  },
   callbacks: {
-    async session(session) {
+    async session({ session }) {
       try {
         const userActiveSubscription = await fauna.query(
           q.Get(
@@ -48,7 +61,7 @@ export default NextAuth({
         }
       }
     },
-    async signIn(user, account, profile) {
+    async signIn({ user, account, profile, credentials }) {
       const { email } = user;
 
       try {
@@ -74,12 +87,10 @@ export default NextAuth({
             )
           )
         )
-
         return true;
       } catch {
         return false;
       }
-
     }
   }
 })
