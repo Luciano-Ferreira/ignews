@@ -14,7 +14,6 @@ jest.mock('../../services/stripe');
 const useSessionMocked = mocked(useSession);
 useSessionMocked.mockReturnValueOnce({ data: null, status: 'unauthenticated' })
 
-
 describe('Home page', () => {
   it('render correctly', () => {
     render(<Home product={{ priceId: 'fake-price-id', amount: 'R$ 50,00' }} />)
@@ -30,21 +29,17 @@ describe('Home page', () => {
       unit_amount: 1000
     } as any)
 
-    const response = await getStaticProps({})
-
-    console.log(response)
+    const response = await getStaticProps({});
 
     expect(response).toEqual(
       expect.objectContaining({
         props: {
           product: {
             priceId: 'fake-price-id',
-            amount: '$ 10.00'
+            amount: '$10.00'
           }
         }
       })
     )
   });
-
-
 });
