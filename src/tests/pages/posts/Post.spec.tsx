@@ -21,8 +21,8 @@ describe('posts[slug] page', () => {
   it('render correctly', () => {
     render(<Post post={post} />)
 
-    expect(screen.getByText('My new post')).toBeInTheDocument()
-    expect(screen.getByText('Post excerpt')).toBeInTheDocument()
+    expect(screen.getByText('My new post')).toBeInTheDocument();
+    expect(screen.getByText('Post excerpt')).toBeInTheDocument();
 
   });
 
