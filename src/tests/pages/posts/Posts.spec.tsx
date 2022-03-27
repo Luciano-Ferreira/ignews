@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import { getPrismicClient } from '../../services/prismic';
+import { getPrismicClient } from '../../../services/prismic';
 import { mocked } from 'jest-mock';
 
 
-import Posts, { getStaticProps } from '../../pages/posts';
+import Posts, { getStaticProps } from '../../../pages/posts';
 
 const posts = [
   { 
@@ -16,7 +16,7 @@ const posts = [
 
 
 
-jest.mock('../../services/prismic');
+jest.mock('../../../services/prismic');
 
 describe('Posts page', () => {
   it('render correctly', () => {
@@ -52,12 +52,12 @@ describe('Posts page', () => {
 
     expect(response).toEqual(
       expect.objectContaining({
-        prop: {
+        props: {
           posts: [{
             slug: 'my-new-post',
             title: 'My new post',
             excerpt: 'Post excerpt',
-            updatedAt: '01 de Abril de 2021'
+            updatedAt: '01 de abril de 2021'
           }]
         }
       })
