@@ -69,6 +69,7 @@ describe('posts[slug] page', () => {
     } as any);
 
     getSessionMocked.mockResolvedValueOnce({
+      data: {},
       activeSubscription: 'fake-active-subscription'
     } as any);
 
