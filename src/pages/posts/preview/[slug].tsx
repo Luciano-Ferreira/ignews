@@ -8,7 +8,7 @@ import { useSession } from 'next-auth/react';
 import { getPrismicClient } from '../../../services/prismic';
 
 import styles from '../post.module.scss';
-import router from 'next/router';
+import { useRouter } from 'next/router';
 
 interface PostPreviewProps {
   post: {
@@ -21,6 +21,7 @@ interface PostPreviewProps {
 
 export default function PostPreview({ post }: PostPreviewProps) {
   const { data: session } = useSession();
+  const router = useRouter();
 
   useEffect(() => {
     if (session?.activeSubscription) {
@@ -44,7 +45,9 @@ export default function PostPreview({ post }: PostPreviewProps) {
           <div className={styles.continueReading}>
             Wanna continue reading?
             <Link href="/">
-              <a>Subscribe now 🤗</a>
+              <span>
+                <a>Subscribe now</a> 🤗
+              </span>
             </Link>
           </div>
 
@@ -58,7 +61,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
     fallback: 'blocking'
-
   }
 }
 
@@ -67,7 +69,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const prismic = getPrismicClient();
 
-  const response = await prismic.getByUID<any>('post', String(slug), {})
+  const response = await prismic.getByUID<any>('post', String(slug), {});
 
   const post = {
     slug,
@@ -81,8 +83,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 
   return {
-    props: {
-      post,
+    props: { 
+      post
     },
     revalidate: 60 * 30
   }
