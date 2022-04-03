@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { Header } from '../../components/Header';
 
 jest.mock('next/router', () => {
-  return{
+  return {
     useRouter() {
       return {
         asPath: '/'
@@ -24,7 +24,9 @@ describe('Header component', () => {
     render(
       <Header />
     )
-  
+    screen.logTestingPlaygroundURL()
+
+
     expect(screen.getByText('Home')).toBeInTheDocument()
     expect(screen.getByText('Posts')).toBeInTheDocument()
 
