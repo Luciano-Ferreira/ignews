@@ -2,7 +2,20 @@
   <h1>ig.news</h1> 
 </div>
 
-![MacBook Pro 16 (1)](https://user-images.githubusercontent.com/46464433/161884377-eed81b0c-5590-45ed-bfb1-35831f91a5cb.svg)
+<div align="center">
+
+[![Status](https://img.shields.io/badge/status-active-success.svg)](https://lfsnewsblog.vercel.app/)
+[![GitHub Issues](https://img.shields.io/github/issues/luciano-ferreira/ignews.svg)](https://github.com/luciano-ferreira/ignews/issues)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+
+</div>
+
+<p align="center">
+  <a href="https://www.figma.com/file/HliLF8NztfWxzUX4TvPsyU/ig.news-(Copy)?node-id=1%3A2" rel="noopener">
+ <img src="https://user-images.githubusercontent.com/46464433/161884377-eed81b0c-5590-45ed-bfb1-35831f91a5cb.svg" alt="ignews"></a>
+</p>
+
+---
 
 Application developed on the ReactJS track of Rocketseat's Ignite intensive course. Several important concepts were presented, such as the harmonious use of Next.js to create a Blog with content exposure control from a subscription. StripeAPI was used for the intermediation of payments
 
@@ -82,6 +95,6 @@ This project is under the MIT license. See the [LICENSE](https://github.com/Luci
 
 Made with ♥ by Luciano Silva :wave: [Get in touch!](https://www.linkedin.com/in/lucianof-silva/)
 
-[layout](https://www.figma.com/file/HliLF8NztfWxzUX4TvPsyU/ig.news-(Copy)?node-id=1%3A2)
+[Layout in figma](https://www.figma.com/file/HliLF8NztfWxzUX4TvPsyU/ig.news-(Copy)?node-id=1%3A2)
 
 
