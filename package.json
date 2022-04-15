@@ -23,7 +23,6 @@
     "prismic-dom": "^2.2.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-horizontal-scrolling-menu": "^2.7.1",
     "react-icons": "^4.3.1",
     "sass": "^1.49.9",
     "stripe": "^8.210.0"
