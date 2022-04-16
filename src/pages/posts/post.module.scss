@@ -29,13 +29,13 @@
       width: 100%;
     }
 
-    p, ul, img, a {
+    p, ul, img {
       margin: 1.5rem 0;
     }
 
     ul {
       padding-left: 1.5rem;
-      li {
+      li, a {
         margin: 0.5rem 0;
       }
     }
