@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet" /> 
                     
                     <link rel="shortcut icon" href="/favicon.png" type="image/png" />
-                    <meta key="theme-color-dark" name="theme-color" media="(prefers-color-scheme: dark)" content="#29292e"/>
+                    <meta key="theme-color-light" name="theme-color" content="#121214"/>
 
                 </Head>
                 <body>
