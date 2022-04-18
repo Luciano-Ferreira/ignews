@@ -35,11 +35,9 @@
 
     ul {
       padding-left: 1.5rem;
-      li, a {
+      li {
         margin: 0.5rem 0;
-        a {
-          margin: 0;
-        }
+        word-wrap: break-word;
       }
     }
 
